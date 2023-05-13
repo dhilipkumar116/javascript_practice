@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>array</title>
+
+    <script>
+      function validate() 
+      {
+          var username = document.getElementById("username");
+          var password = document.getElementById("password");
+
+          if(username.value.trim() == ""){
+            //alert("username is empty")
+            username.style.border = "solid 1px red";
+            document.getElementById("lab_user").style.visibility="visible";
+            return false;
+          }
+          else if(password.value.trim() == ""){
+            //alert("pass is empty");
+            password.style.border = "solid 1px red";
+            return false;
+          }
+          else if(password.value.trim().length < 5){
+            alert("pass is too small")
+            return false;
+          }
+          else{
+            return true
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return validate()" action="welcome.html">
+      <input id="username" type="text" placeholder="username" />
+      <label id="lab_user" style="color:red; visibility: hidden;">Invalid</label>
+      <br />
+      <br />
+      <input id="password" type="password" placeholder="password" />
+      <br />
+      <br />
+      <button type="submit">login</button>
+    </form>
+  </body>
+</html>

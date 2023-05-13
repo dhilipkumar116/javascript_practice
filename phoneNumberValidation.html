@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>contact</title>
+<!-- 
+  \d - [0-9]
+  \w - (a-z , A-Z , 0-9 , & _)
+  \s -  (spaces and tab)
+  \t -  tabs
+ -->
+    <script>
+      function handleEvent() {
+        var contact = document.getElementById('text').value;
+        var regx = /^[7-9]\d{9}$/;
+        if (regx.test(contact)) {
+          document.getElementById('lab').style.visibility = 'visible';
+          document.getElementById('lab').style.color = 'green';
+          document.getElementById("lab").innerHTML="valid"
+        } else {
+          document.getElementById('lab').style.visibility = 'visible';
+          document.getElementById('lab').style.color = 'red';
+          document.getElementById("lab").innerHTML="Invalid"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <input id="text" type="text" placeholder="contact" />
+      <label id="lab" style="color: red; visibility: hidden;">Invalid</label>
+      <br />
+      <br />
+      <button onclick="handleEvent()" type="button">submit</button>
+    </form>
+  </body>
+</html>

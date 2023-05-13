@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>select</title>
+
+    <script>
+      
+      function handleEvent()
+      {
+          var select = document.getElementById("selectBox");
+          alert(select.options[select.selectedIndex].value)
+      }
+    </script>
+  </head>
+  <body>
+    <select id="selectBox">
+      <option value="CAR">car</option>
+      <option value="VAN">van</option>
+      <option value="BUS">bus</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="handleEvent()">click me</button>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <input type="text" id="searchbar"/>
+        <script>
+            let counter = 1
+            function getData(as) {
+                console.log('fetching data ', counter++)
+            }
+            const debounce = (func, delay) => {
+                let debounceTimerId
+                return function() {
+                    const context = this
+                    const args = arguments
+                    clearTimeout(debounceTimerId)
+                    debounceTimerId = setTimeout(() => {
+                        func.apply(this,args)
+                    }, delay)
+                }
+            }
+            betterFunction = debounce(getData, 500)
+            document.querySelector('#searchbar').addEventListener('keyup',()=> betterFunction())
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+
+However, you don’t need to use your own implementation of debounce 
+in your projects if you don’t want to. Widely used JS libraries already 
+contain its implementation. Here are a few examples:
+Library	Example
+jQuery (via library)	$.debounce(300, saveInput);
+Lodash	                _.debounce(saveInput, 300);
+Underscore	            _.debounce(saveInput, 300);
+
+ -->

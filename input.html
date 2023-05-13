@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>inputs</title>
+
+    <script>
+      
+      function handleEvent()
+      {
+          var username =  document.getElementById("txt1")
+                            .innerHTML.value;
+          var password = document.getElementById("txt2")
+                            .innerHTML.value;
+        
+          if(username==password){
+              alert("logged in succesfully");
+          }
+      }
+    </script>
+  </head>
+  <body>
+
+    <input placeholder="enter username" id="txt1">
+    <br>
+    <br>
+    <input placeholder="enter password" id="txt2" 
+    type="password">
+    <br>
+    <br>
+    <button onclick="handleEvent()">login</button>
+  </body>
+</html>

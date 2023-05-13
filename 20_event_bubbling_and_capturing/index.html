@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>event bubbling & capturing</title>
+        <style>
+            div {
+                border: 1px solid black;
+                padding: 40px;
+                min-width: 100px;
+                min-height: 100px;
+                color: black;
+                font-size: large;
+                font-weight: bold;
+            }
+            #grandparent {
+                background-color: cadetblue;
+            }
+            #parent {
+                background-color: blueviolet;
+            }
+            #child {
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grandparent">
+            grandparent
+            <div id="parent">
+                parent
+                <div id="child">
+                    child
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

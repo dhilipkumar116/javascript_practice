@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>object</title>
+
+    <script>
+     
+        function cars(car_brand , car_model , car_price)
+        {
+            this.car_brand = car_brand;
+            this.car_brand = car_model;
+            this.car_price = car_price;
+            this.ithasAutoPiolet = function()
+            {
+                document.write("<h2>this car has auto pilot</h2>");
+            }
+        }
+
+        var c1 = new cars("tata" , "aasdf" , 10000);
+        var c2 = new cars("maruthi" , "weuioew" , 50000);
+        c1.ithasAutoPiolet()
+        document.write("<h2>"+c1.car_brand+"</h2>");
+        document.write("<h2>"+c2.car_price+"</h2>");
+
+    </script>
+  </head>
+  <body></body>
+</html>

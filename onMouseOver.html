@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>onmouseover</title>
+
+    <script>
+        function setNewpic()
+        {
+            document.getElementById("img1").src = "empty-cart.png"
+        }
+
+        function setOldpic()
+        {
+            document.getElementById("img1").src = "store.png"
+        }
+    </script>
+  </head>
+  <body>
+      <img id="img1" src="store.png" 
+      width="200" 
+      height="200"
+      onmouseover="setNewpic()"
+      onmouseout="setOldpic()">
+  </body>
+</html>

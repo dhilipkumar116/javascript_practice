@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>radio</title>
+
+    <script>
+      
+      function handleEvent()
+      {
+          var rd1 = document.getElementById("rd1");
+          var rd2 = document.getElementById("rd2");
+
+          if(rd1.checked == true){
+              alert("selected is : "+rd1.value)
+          }
+          else if(rd2.checked == true){
+              alert("selected is : "+rd2.value)
+          }
+          else{
+              alert("nothing selected")
+          }
+      }
+
+
+    </script>
+  </head>
+  <body>
+      <input id="rd1" name="grp1" type="radio" value="simple snippets">
+      simple snippets
+      <br>
+      <input id="rd2" name="grp1" type="radio" value=" telusko learning"> 
+      telusko learning
+
+      <br>
+      <button id="btn1" onclick="handleEvent()">click me</button>
+  </body>
+</html>

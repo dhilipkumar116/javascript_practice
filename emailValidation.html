@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>email</title>
+
+    <script>
+      function handleEvent() {
+        var contact = document.getElementById('text').value;
+        var regx = /^([a-z A-Z 0-9\.-]+)@([a-z A-Z 0-9-]+).([a-z]){2,8}(.[a-z]{2,8})?$/;
+        if (regx.test(contact)) {
+          document.getElementById('lab').style.visibility = 'visible';
+          document.getElementById('lab').style.color = 'green';
+          document.getElementById("lab").innerHTML="valid"
+        } else {
+          document.getElementById('lab').style.visibility = 'visible';
+          document.getElementById('lab').style.color = 'red';
+          document.getElementById("lab").innerHTML="Invalid"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <input id="text" type="text" placeholder="email" />
+      <label id="lab" style="color: red; visibility: hidden;">Invalid</label>
+      <br />
+      <br />
+      <button onclick="handleEvent()" type="button">submit</button>
+    </form>
+  </body>
+</html>

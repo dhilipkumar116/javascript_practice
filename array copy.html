@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>timing</title>
+
+    <script>
+      // setTimeout()
+      // clearTimeout()
+
+      var id;
+      var sec = 0;
+      function printmessage() {
+        
+        document.getElementById('text').innerHTML = sec + ' seconds';
+        sec++;
+      }
+
+      function start() {
+        window.clearInterval(id);
+        id = window.setInterval(printmessage, 1000);
+        
+      }
+
+      function stop() {
+        window.clearInterval(id);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="start()">start</button>
+    <br />
+    <h2 id="text">some text</h2>
+    <br />
+    <button onclick="stop()">stop</button>
+  </body>
+</html>

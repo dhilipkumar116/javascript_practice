@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>getelement By Tagname</title>
+
+    <script>
+      function handleEvent() {
+        var para = document.getElementsByTagName('p');
+        para[0].style.fontSize = 20;
+        para[1].style.color = "blue";
+      }
+    </script>
+  </head>
+  <body>
+    <p>this is para 1</p>
+    <p>this is para 2</p>
+    <p>this is para 3</p>
+    <p>this is para 4</p>
+    <p>this is para 5</p>
+    <br />
+    <button onclick="handleEvent()">click me</button>
+  </body>
+</html>

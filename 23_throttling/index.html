@@ -1,0 +1,46 @@
+<html>
+    <head>
+    <!-- 
+        Throttling is used to call a function after 
+        every millisecond or a particular interval of time only 
+        the first click is executed immediately.
+
+        Debouncing:- It is used to invoke/call/execute function only when things have 
+        stopped happening for a given specific time. For example, Call a search 
+        function to fetch the result when the user has stopped typing in the search box. 
+        If the user keeps on typing then reset the function.
+
+        Throttling:- It is used to restrict the no of time a function can be 
+        called/invoked/executes. For example, making an API call to the server on 
+        the user’s click. If the user spam’s the click then also there will be specific 
+        calls only. Like, make each call after 10 seconds.
+
+
+     -->
+        <title></title>
+    </head>
+    <body>
+        <button onclick="betterExpensiveFunc()">click me</button>
+        <script>
+            var name = 'dhilip'
+            const expensiveFunc = (name) => {
+                console.log(name)
+                console.log('clicked')
+            }
+            const throttle = (func, delay) => {
+                let flag = true
+                return function() {
+                    if(flag) {
+                        context = this
+                        args = arguments
+                        flag = false
+                        func.apply(this, arguments)
+                        setInterval(()=>{flag = true},delay)
+                    }
+                }
+            }
+            const betterExpensiveFunc = throttle((name) => expensiveFunc(name), 3000);
+
+        </script>
+    </body>
+</html>
