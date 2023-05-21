@@ -63,6 +63,7 @@ arr.push(10)
 arr.push(2)
 arr.push(100)
 arr.push(4)
+arr.push(1000)
 console.log(arr)
 arr.sort()
 console.log(arr)
@@ -139,3 +140,44 @@ function add(a) {
 }
 
 console.log('currying', add(1)(2))
+
+
+getChicken = function(nextFunction) {
+    console.log('getting chicken')
+    nextFunction()
+}
+sliceChicken = function(nextFunction) {
+    console.log('slice chicken')
+    nextFunction()
+}
+cookChicken = function(nextFunction) {
+  console.log('cook chicken')
+  nextFunction()
+}
+
+getChicken(() => {
+  sliceChicken(()=>{
+    cookChicken(() => {
+      console.log("finshed")
+    })
+  })
+})
+
+var obj1 = {
+  name:'dhilip',
+  age:10
+}
+// spread operator used for deep copy in js
+var obj2 = {...obj1}
+obj2.age = 23
+console.log("obj1", obj1)
+console.log("obj2", obj2)
+
+
+function restOperatorExample(...elements) {
+  for(let element in elements) {
+    console.log(element)
+  }
+}
+
+restOperatorExample(1,2,3,4)
